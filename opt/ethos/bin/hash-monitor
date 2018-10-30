@@ -185,7 +185,6 @@ function get_hashrates(){
 	
 	if ($miner == "t-rex") {
 		$raw_trx_stats = @json_decode(trim(`echo 'summary' | socat -t 15 stdio tcp-connect:127.0.0.1:4068`), true);
-		print_r($raw_trx_stats);
 	}
 
 	for($i = 0;$i < $instances; $i++){
