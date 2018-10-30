@@ -1081,7 +1081,6 @@ function start_miner()
 		if(!preg_match("/-a/",$flags)){
 			$flags .= " -a x16r ";
 		}
-		$extraflags = trim(`/opt/ethos/sbin/ethos-readconf flags`);
 		$pools = "-o $proxypool1 -u $proxywallet$worker -p $poolpass1 ";
     }
 
@@ -1168,7 +1167,7 @@ function start_miner()
 		$miner_suffix['xtl-stak'] = " " . $extraflags;
 		$miner_suffix['teamredminer'] = " " . $mine_with . " " . $extraflags;
 		$miner_suffix['lolminer'] = "";
-		$miner_suffix['t-rex'] = " " . $extraflags;
+		$miner_suffix['t-rex'] = "";
 		
 		$command = "su - ethos -c \"" . escapeshellcmd($miner_path[$miner] . " " . $miner_params[$miner]) . " $miner_suffix[$miner]\"";
 		$command = str_replace('\#',"#",$command);
