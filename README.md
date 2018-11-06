@@ -19,6 +19,14 @@ t-rex=flags -a x16r
 
 miner abbccd t-rex
 ```
+
+Where ```abbccd``` is your EthOS rig ID.
+Or you can use t-rex miner globally by default for your all rigs:
+
+```
+globalminer t-rex
+```
+
 ## links
 
  * [ethos mining distro](http://ethosdistro.com)
