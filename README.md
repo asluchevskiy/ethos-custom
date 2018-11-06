@@ -5,9 +5,14 @@ Works with ethos 1.3.3, other versions has not been tested. Default algo is x16r
 
 ## install
 
-Run this command:
+Run this command to install or full update:
 ```
 wget -O - https://raw.githubusercontent.com/asluchevskiy/ethos-t-rex/master/install.sh | sh
+```
+### update
+To only update miner to the latest verion, run:
+```
+wget -O - https://raw.githubusercontent.com/asluchevskiy/ethos-t-rex/master/update-miner.sh | sh
 ```
 
 ## config sample
