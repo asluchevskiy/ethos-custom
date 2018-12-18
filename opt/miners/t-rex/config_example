@@ -94,6 +94,9 @@
   // Disable color output for console
   "no-color": false,
 
+  // Disable NVML GPU stats. If set, temperature limit and temperature start won't affect miner work.
+  "no-nvml": false,
+
   // Quiet mode. No GPU stats at all.
   "quiet": false,
 

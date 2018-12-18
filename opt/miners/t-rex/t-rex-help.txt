@@ -14,6 +14,7 @@ making sure it is stable, slowly increase your overclock to find the
 Usage of command line options
 Options:
     -a, --algo                     Specify the hash algorithm to use.
+                                    astralhash
                                     balloon
                                     bcd
                                     bitcore
@@ -21,7 +22,10 @@ Options:
                                     dedal
                                     geek
                                     hmq1725
+                                    jeonghash
                                     lyra2z
+                                    padihash
+                                    pawelhash
                                     phi
                                     polytimos
                                     sha256t
@@ -59,6 +63,7 @@ Options:
         --gpu-report-interval      GPU stats report frequency. (default: 5. every 5th share)
     -q, --quiet                    Quiet mode. No GPU stats at all.
         --no-color                 Disable color output for console.
+        --no-nvml                  Disable NVML GPU stats.
     -B, --benchmark                Benchmark mode.
     -P, --protocol-dump            User protocol logging.
     -c, --config                   Load a JSON-format configuration file.
