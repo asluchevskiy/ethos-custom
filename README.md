@@ -23,7 +23,7 @@ disallow
 ```
 This will disable and stop mining. Wait for 15 seconds. Then use the correct URL with latest t-rex version for linux and cuda10 and unpack it:
 ```
-cd /opt/ethos/miners/t-rex
+cd /opt/miners/t-rex
 sudo wget https://github.com/trexminer/T-Rex/releases/download/0.8.3/t-rex-0.8.3-linux-cuda10.0.tar.gz
 sudo tar xvf t-rex-0.8.3-linux-cuda10.0.tar.gz
 ```
