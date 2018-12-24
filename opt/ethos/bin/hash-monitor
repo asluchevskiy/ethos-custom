@@ -142,6 +142,8 @@ function get_hashrates(){
 	} else {
 			$tail = 400;
 	}
+
+	include '/opt/miners/custom/hash-monitor';
 	
 	if(preg_match("/(ccminer|nevermore)/", $miner)){
 		`echo "threads|" | socat stdio tcp-connect:127.0.0.1:4068 > /var/run/ethos/miner.dump`;
@@ -183,9 +185,6 @@ function get_hashrates(){
 		$raw_lolstats = @json_decode(`socat -t 15 stdio tcp-connect:127.0.0.1:42000`,TRUE);	
 	}
 	
-	if ($miner == "t-rex") {
-		$raw_trx_stats = @json_decode(trim(`echo 'summary' | socat -t 15 stdio tcp-connect:127.0.0.1:4068`), true);
-	}
 
 	for($i = 0;$i < $instances; $i++){
 		if(preg_match("/(ccminer|nevermore)/",$miner)){
@@ -291,13 +290,6 @@ function get_hashrates(){
 			$dualminer_hash[$i] = (($last_mod_secs < 300) ? sprintf('%05.2f', 0.00 + $dualminer_raw) : 0);
 		}
 		
-		if ($miner == "t-rex") {
-			$raw = $raw_trx_stats["gpus"][$i]["hashrate_minute"];
-			if ($raw > 1000*1000) {
-				$raw = $raw / 1000 / 1000;
-			}
-		}
-
 		if($last_mod_secs < 300){
 			$miner_hash[$i] = sprintf('%05.2f', 0.00 + $raw);
 		} else {
