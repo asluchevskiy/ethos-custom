@@ -30,11 +30,12 @@ custom=flags -a x16r -J --api-bind-http 0
 ```
 
 ## nbminer miner config sample
+```
 miner abbccd custom
 custom=proxypool1 btm.f2pool.com:9221
 custom=proxywallet your_btm_wallet
 custom=flags -a tensority --api 127.0.0.1:9000
-
+```
 
 Where ```abbccd``` is your EthOS rig ID.
 
