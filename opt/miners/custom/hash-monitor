@@ -5,9 +5,11 @@ $customminer = trim(`cat /opt/miners/custom/custom-version.txt | awk '{print $1}
 if ($customminer == "t-rex") {
 	$raw_trx_stats = @json_decode(trim(`echo 'summary' | socat -t 15 stdio tcp-connect:127.0.0.1:4068`), true);
 
-	$raw = $raw_trx_stats["gpus"][$i]["hashrate_minute"];
-	if ($raw > 1000*1000) {
-		$raw = $raw / 1000 / 1000;
+	for($i = 0;$i < $instances; $i++) {
+		$customhash[$i] = $raw_trx_stats["gpus"][$i]["hashrate_minute"];
+        	if ($customhash[$i] > 1000*1000) {
+                	$customhash[$i] = $customhash[$i] / 1000 / 1000;
+        	}
 	}
 }
 
