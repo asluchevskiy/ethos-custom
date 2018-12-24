@@ -13,4 +13,13 @@ if ($customminer == "t-rex") {
 	}
 }
 
+if ($customminer == "nbminer") {
+	$raw_trx_stats = @json_decode(exec('curl -s http://127.0.0.1:9000/api/v1/status'), true);
+
+	for($i = 0;$i < $instances; $i++) {
+		$customhash[$i] = $raw_trx_stats['miner']['devices'][$i]['hashrate'];
+	}
+}
+
+
 ?>

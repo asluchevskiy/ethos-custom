@@ -1078,7 +1078,7 @@ function start_miner()
 		if(trim(`/opt/ethos/sbin/ethos-readconf selectedgpus`) != "") {
 			$mine_with = "-d $devices";
 		}
-		$pools = "-o $proxypool1 -u $proxywallet$worker -p $poolpass1 ";
+		$pools = "-o $proxypool1 -u $proxywallet$worker";
     }
 
 	//begin miner commandline buildup
