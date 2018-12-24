@@ -1,6 +1,6 @@
 <?php
 
-$customminer = trim(`cat /opt/miners/custom/custom-version.txt | awk '{print $1}'`);
+$customminer = trim(`cat /opt/miners/custom/custom-version.txt | awk '{print $2}' | awk -F"-" '{print $1}'`);
 
 if ($customminer == "t-rex") {
 	$raw_trx_stats = @json_decode(trim(`echo 'summary' | socat -t 15 stdio tcp-connect:127.0.0.1:4068`), true);
