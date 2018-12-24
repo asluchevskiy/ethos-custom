@@ -11,7 +11,7 @@ tar -xvf NBMiner_12.1_Linux.tgz
 cp -R /tmp/NBMiner_Linux/* /opt/miners/custom/nbminer
 rm -rf NBMiner_*
 ln -s /opt/miners/custom/nbminer/nbminer /opt/miners/custom/custom
-echo 'nbminer 12.1' > /opt/miners/custom/custom-version.txt
+echo 'custom nbminer-12.1' > /opt/miners/custom/custom-version.txt
 sudo service ethos-miner-monitor restart
 allow
 echo 'done'
