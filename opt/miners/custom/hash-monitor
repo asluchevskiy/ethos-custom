@@ -1,5 +1,4 @@
 <?php
-
 $customminer = trim(`cat /opt/miners/custom/custom-version.txt | awk '{print $2}' | awk -F"-" '{print $1}'`);
 
 if ($customminer == "t-rex") {
@@ -21,5 +20,20 @@ if ($customminer == "nbminer") {
 	}
 }
 
+if ($customminer == "cryptodredge") {
+	`echo "threads|" | socat stdio tcp-connect:127.0.0.1:4068 > /var/run/ethos/miner.dump`;
+	preg_match_all("/KHS=(\d+\.\d+)/", @file_get_contents("/var/run/ethos/miner.dump"), $cryptodredge_hashes);
+
+        for($i = 0;$i < $instances; $i++) {
+		$multiplier = 1;
+		if($cryptodredge_hashes[1][0] > 1000) {
+			$multiplier = 0.001;
+		}
+		if($cryptodredge_hashes[1][0] < 10 && $cryptodredge_hashes[1][0] > 0){
+			$multiplier = 1000;
+		}
+                $customhash[$i] = $cryptodredge_hashes[1][$i] * $multiplier;
+        }
+}
 
 ?>

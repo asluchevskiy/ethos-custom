@@ -2,6 +2,7 @@ disallow
 minestop
 echo 'waiting for 15 seconds before continue'
 sleep 15
+curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/opt/miners/custom/hash-monitor > /opt/miners/custom/hash-monitor
 cd /tmp
 wget https://github.com/trexminer/T-Rex/releases/download/0.8.9/t-rex-0.8.9-linux-cuda10.0.tar.gz
 rm /opt/miners/custom/custom

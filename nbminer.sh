@@ -2,6 +2,7 @@ disallow
 minestop
 echo 'waiting for 15 seconds before continue'
 sleep 15
+curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/opt/miners/custom/hash-monitor > /opt/miners/custom/hash-monitor
 cd /tmp
 wget https://github.com/NebuTech/NBMiner/releases/download/v12.1/NBMiner_12.1_Linux.tgz
 rm /opt/miners/custom/custom

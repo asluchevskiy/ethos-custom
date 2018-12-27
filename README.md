@@ -18,7 +18,10 @@ To install nbminer
 ```
 source <(curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/nbminer.sh)
 ```
-
+To install cryptodredge
+```
+source <(curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/cryptodredge.sh)
+```
 
 ## t-rex miner config sample
 ```
@@ -28,7 +31,6 @@ custom=proxywallet your_btc_wallet
 custom=poolpass1 x
 custom=flags -a x16r -J --api-bind-http 0
 ```
-
 ## nbminer miner config sample
 ```
 miner abbccd custom
@@ -36,11 +38,15 @@ custom=proxypool1 btm.f2pool.com:9221
 custom=proxywallet your_btm_wallet
 custom=flags -a tensority --api 127.0.0.1:9000
 ```
-
+## cryptodredge miner config sample
+```
+miner abbccd custom
+custom=proxypool1 suqa-pool.beepool.org:9504
+custom=proxywallet your_suqa_wallet
+custom=flags -a x22i
+```
 Where ```abbccd``` is your EthOS rig ID.
 
 ## links
 
  * [ethos mining distro](http://ethosdistro.com)
- * [official t-rex miner thread at bitcointalk](https://bitcointalk.org/index.php?topic=4432704.0)
- * [t-rex github releases page](https://github.com/trexminer/T-Rex/releases/)
