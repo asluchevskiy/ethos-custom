@@ -1,4 +1,4 @@
-VERSION='13.0'
+VERSION='13.1'
 
 disallow
 minestop
@@ -6,7 +6,7 @@ echo 'waiting for 15 seconds before continue'
 sleep 15
 curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/opt/miners/custom/hash-monitor > /opt/miners/custom/hash-monitor
 cd /tmp
-wget https://github.com/NebuTech/NBMiner/releases/download/v$VERSION/NBMiner_$VERSION\_Linux.tgz
+wget -q https://github.com/NebuTech/NBMiner/releases/download/v$VERSION/NBMiner_$VERSION\_Linux.tgz
 rm /opt/miners/custom/custom
 rm -rf /opt/miners/custom/nbminer
 mkdir /opt/miners/custom/nbminer
