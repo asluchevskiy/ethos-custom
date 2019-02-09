@@ -1074,11 +1074,13 @@ function start_miner()
     * CUSTOM
     ********************************/
     if ($miner == "custom") {
-		$devices = implode(",",select_gpus());
-		if(trim(`/opt/ethos/sbin/ethos-readconf selectedgpus`) != "") {
-			$mine_with = "-d $devices";
-		}
-		$pools = "-o $proxypool1 -u $proxywallet$worker";
+		//$devices = implode(",",select_gpus());
+		//if(trim(`/opt/ethos/sbin/ethos-readconf selectedgpus`) != "") {
+		//	$mine_with = "-d $devices";
+		//}
+		//$pools = "-o $proxypool1 -u $proxywallet$worker";
+                $customworker = str_replace(".", "", $worker);
+                $flags = str_replace("WORKER", $customworker, $flags);
     }
 
 	//begin miner commandline buildup
@@ -1140,7 +1142,7 @@ function start_miner()
 		$miner_params['teamredminer'] = $flags ." ". $pools;
 		$miner_params['ewbf-equihash'] = "--config /var/run/ethos/ewbf-equihash.conf";
 		$miner_params['lolminer'] = $flags;
-		$miner_params['custom'] = $flags ." ". $pools;
+		$miner_params['custom'] = $flags;
 
 		$miner_suffix['avermore'] = " " . $mine_with . " " . $extraflags;
 		$miner_suffix['dstm-zcash'] = " " . $mine_with . " " . $extraflags;

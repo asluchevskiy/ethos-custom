@@ -36,4 +36,13 @@ if ($customminer == "cryptodredge") {
         }
 }
 
+
+if ($customminer == "gminer") {
+        $raw_trx_stats = @json_decode(exec('curl -s http://localhost:9000/stat'), true);
+        for($i = 0;$i < $instances; $i++) {
+                $customhash[$i] = $raw_trx_stats['devices'][$i]['speed'];
+        }
+}
+
+
 ?>
