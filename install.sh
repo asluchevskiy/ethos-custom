@@ -1,3 +1,6 @@
+disallow
+minestop
+sleep 5
 TMP_DIR=/tmp
 git -C $TMP_DIR clone https://github.com/unrealjke/ethos-custom.git
 sudo cp -r $TMP_DIR/ethos-custom/opt/* /opt/
