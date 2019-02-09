@@ -5,7 +5,7 @@ echo 'waiting for 15 seconds before continue'
 sleep 15
 curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/opt/miners/custom/hash-monitor > /opt/miners/custom/hash-monitor
 cd /tmp
-wget -q https://raw.githubusercontent.com/unrealjke/ethos-custom/master/miner/gminer_$VERSION/_minimal_linux64.tar.gz
+wget -q https://github.com/unrealjke/ethos-custom/raw/master/miner/gminer_$VERSION/_minimal_linux64.tar.gz
 rm /opt/miners/custom/custom
 rm -rf /opt/miners/custom/gminer
 mkdir /opt/miners/custom/gminer
