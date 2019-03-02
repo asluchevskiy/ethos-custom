@@ -1,4 +1,4 @@
-VERSION='1_33'
+VERSION='1_34'
 disallow
 minestop
 echo 'waiting for 15 seconds before continue'
