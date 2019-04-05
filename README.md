@@ -23,27 +23,15 @@ To install cryptodredge
 source <(curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/cryptodredge.sh)
 ```
 
-## t-rex miner config sample
+## gminer miner config sample
 ```
 miner abbccd custom
-custom=proxypool1 x16r.eu.nicehash.com:3366
-custom=proxywallet your_btc_wallet
-custom=poolpass1 x
-custom=flags -a x16r -J --api-bind-http 0
-```
-## nbminer miner config sample
-```
-miner abbccd custom
-custom=proxypool1 btm.f2pool.com:9221
-custom=proxywallet your_btm_wallet
-custom=flags -a tensority --api 127.0.0.1:9000
+custom=flags --algo 150_5 --server beam.eu.nicehash.com --port 3370 --user YOUR_BTC_ADRESS.WORKER --api 9000
 ```
 ## cryptodredge miner config sample
 ```
 miner abbccd custom
-custom=proxypool1 suqa-pool.beepool.org:9504
-custom=proxywallet your_suqa_wallet
-custom=flags -a x22i
+custom=flags -a mtp -o stratum+tcp://mtp.eu.nicehash.com:3374 -u YOUR_BTC_ADRESS.WORKER
 ```
 Where ```abbccd``` is your EthOS rig ID.
 
