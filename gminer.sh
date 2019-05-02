@@ -1,11 +1,11 @@
-VERSION='1_36'
+VERSION='1_40'
 disallow
 minestop
 echo 'waiting for 15 seconds before continue'
 sleep 15
 curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/opt/miners/custom/hash-monitor > /opt/miners/custom/hash-monitor
 cd /tmp
-wget -q http://remote.rigshop.ru/gminer_$VERSION\_minimal_linux64.tar.gz
+wget -q  https://github.com/develsoftware/GMinerRelease/releases/download/1.40/gminer_gminer_$VERSION_linux64.tar.xz
 rm /opt/miners/custom/custom
 rm -rf /opt/miners/custom/gminer
 mkdir /opt/miners/custom/gminer
