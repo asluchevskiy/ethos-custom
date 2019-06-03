@@ -44,5 +44,12 @@ if ($customminer == "gminer") {
         }
 }
 
+if ($customminer == "bminer") {
+        $raw_trx_stats = @json_decode(exec('curl -s http://127.0.0.1:1880/api/status'), true);
+
+        for($i = 0;$i < $instances; $i++) {
+                $customhash[$i] = $raw_trx_stats['miners'][$i]['solver']['solution_rate'];
+        }
+}
 
 ?>
