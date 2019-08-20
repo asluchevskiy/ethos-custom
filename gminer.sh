@@ -1,5 +1,5 @@
-VERSION='1_55'
-VER='1.55'
+VERSION='1_57'
+VER='1.57'
 disallow
 minestop
 echo 'waiting for 15 seconds before continue'
