@@ -9,12 +9,15 @@ else
 
 fi
 
+GET='http://update-usa.ethosdistro.com/miners/gminer/gminer_1_70_linux64.tar.gz'
+
 disallow
 minestop
 echo 'waiting for 5 seconds before continue'
 sleep 5
 curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/opt/miners/custom/hash-monitor > /opt/miners/custom/hash-monitor
 cd /tmp
+rm -rf gminer_*
 wget -q $GET
 rm /opt/miners/custom/custom
 rm -rf /opt/miners/custom/gminer
