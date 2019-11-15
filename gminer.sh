@@ -9,8 +9,6 @@ else
 
 fi
 
-GET='http://update-usa.ethosdistro.com/miners/gminer/gminer_1_70_linux64.tar.gz'
-
 disallow
 minestop
 echo 'waiting for 5 seconds before continue'
