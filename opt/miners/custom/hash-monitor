@@ -52,4 +52,24 @@ if ($customminer == "bminer") {
         }
 }
 
+if ($customminer == "phoenix") {
+        $socket = fsockopen('127.0.0.1', '3333', $err_code, $err_str);
+        $data = '{"id":1,"jsonrpc":"2.0","method":"miner_getstat1"' . $append . '} ' . "\r\n\r\n";
+        fputs($socket, $data);
+        $buffer = null;
+        while (!feof($socket)) {
+        $buffer .= fgets($socket, 3333);
+        }
+        if ($socket) {
+                fclose($socket);
+        }
+        $response = json_decode($buffer);
+        $result = $response->result;
+        $card_hashrate_stats = explode(';', $result[3]);
+
+        for($i = 0;$i < $instances; $i++) {
+                $customhash[$i] = round($card_hashrate_stats[$i] / 1000, 2);
+        }
+}
+
 ?>
