@@ -188,9 +188,16 @@ function get_hashrates(){
 
 	for($i = 0;$i < $instances; $i++){
                 if($miner == "custom"){
-                        $raw = $customhash[$i];
+                        $multiplier = 1;
+                        if($customhash[$i] > 1000) {
+                                $multiplier = 0.001;
+                        }
+                        if($customhash[$i] < 1 && $customhash[$i] > 0){
+                                $multiplier = 100;
+                        }
+                        $raw = $customhash[$i] * $multiplier;
                 }
-
+		
 		if(preg_match("/(ccminer|nevermore)/",$miner)){
 			
 			$multiplier = 1;
