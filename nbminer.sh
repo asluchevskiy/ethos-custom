@@ -1,4 +1,4 @@
-VERSION='26.2'
+VERSION='30.0'
 
 disallow
 minestop
