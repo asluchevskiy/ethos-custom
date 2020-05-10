@@ -1108,7 +1108,7 @@ function start_miner()
 	$miner_path['teamredminer'] = "/usr/bin/screen -c /opt/ethos/etc/screenrc.teamredminer -l -L -dmS teamredminer /opt/miners/teamredminer/teamredminer";
 	$miner_path['ewbf-equihash'] = "/usr/bin/screen -c /opt/ethos/etc/screenrc.ewbf-equihash -l -L -dmS ewbf-equihash /opt/miners/ewbf-equihash/ewbf-equihash";
 	$miner_path['lolminer'] = "/usr/bin/screen -c /opt/ethos/etc/screenrc.lolminer -l -L -dmS lolminer /opt/miners/lolminer/lolMiner";
-	$miner_path['custom'] = "/usr/bin/screen -c /opt/ethos/etc/screenrc.custom -l -L -dmS custom /opt/miners/custom/custom";
+	$miner_path['custom'] = "/usr/bin/screen -c /opt/ethos/etc/screenrc.custom -l -L -dmS custom sudo /opt/miners/custom/custom";
 		
 			
 	$start_miners = select_gpus();
