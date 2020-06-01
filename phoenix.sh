@@ -1,4 +1,4 @@
-VERSION='4.9c'
+VERSION='5.0b'
 
 disallow
 minestop
