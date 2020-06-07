@@ -28,6 +28,9 @@ source <(curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master
 ```
 source <(curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/phoenix.sh)
 ```
+```
+source <(curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/noncerpro-nimiq-cuda.sh)
+```
 ## flags for hashing
 t-rex
 ```
