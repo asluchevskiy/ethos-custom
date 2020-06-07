@@ -72,4 +72,12 @@ if ($customminer == "phoenix") {
         }
 }
 
+if ($customminer == "noncerpro") {
+        $raw_trx_stats = @json_decode(exec('curl -s http://127.0.0.1:9000/api'), true);
+
+        for($i = 0;$i < $instances; $i++) {
+                $customhash[$i] = $raw_trx_stats['devices'][$i]['hashrate']/1000;
+        }
+}
+
 ?>
