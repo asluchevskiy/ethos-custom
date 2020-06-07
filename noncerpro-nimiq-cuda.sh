@@ -2,9 +2,9 @@ VERSION='3.3.0'
 
 disallow
 minestop
-echo 'waiting for 15 seconds before continue'
+echo 'waiting for 5 seconds before continue'
 sleep 5
-curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/opt/miners/custom/hash-monitor > /opt/miners/cu$
+curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/opt/miners/custom/hash-monitor > /opt/miners/custom/hash-monitor
 cd /tmp
 wget -q https://github.com/NoncerPro/noncerpro-nimiq-cuda/releases/download/v$VERSION/noncerpro-cuda-linux-$VERSION.tar.gz
 rm -rf /opt/miners/custom/noncerpro-nimiq-cuda
