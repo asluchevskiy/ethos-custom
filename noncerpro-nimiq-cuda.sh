@@ -13,6 +13,6 @@ tar -xzf noncerpro-cuda-linux-$VERSION.tar.gz -C /opt/miners/custom/noncerpro-ni
 rm noncerpro-cuda-linux-$VERSION.tar.gz
 rm /opt/miners/custom/custom
 ln -s /opt/miners/custom/noncerpro-nimiq-cuda/noncerpro /opt/miners/custom/custom
-echo 'noncerpro-nimiq-cuda-'$VERSION > /opt/miners/custom/custom-version.txt
+echo 'custom noncerpro-nimiq-cuda-'$VERSION > /opt/miners/custom/custom-version.txt
 sudo service ethos-miner-monitor restart
 allow
