@@ -20,7 +20,8 @@ wget -q $GET
 rm /opt/miners/custom/custom
 rm -rf /opt/miners/custom/gminer
 mkdir /opt/miners/custom/gminer
-tar -xvf gminer_${VERSION/./_}_linux64.* -C /opt/miners/custom/gminer
+#tar -xvf gminer_${VERSION/./_}_linux64.* -C /opt/miners/custom/gminer
+unzip -d /opt/miners/custom/gminer/ gminer_*
 rm -rf gminer_*
 ln -s /opt/miners/custom/gminer/miner /opt/miners/custom/custom
 echo 'custom gminer-'$VERSION > /opt/miners/custom/custom-version.txt
