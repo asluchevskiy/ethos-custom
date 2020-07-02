@@ -1,4 +1,4 @@
-VERSION='v16.2.4-6b94c23'
+VERSION='v16.2.6-b0bf7b6'
 
 disallow
 minestop
