@@ -1,0 +1,83 @@
+<?php
+$customminer = trim(`cat /var/run/ethos/miner.versions | grep custom | awk '{print $2}' | awk -F"-" '{print $1}'`);
+
+if ($customminer == "trex") {
+	$raw_trx_stats = @json_decode(trim(`echo 'summary' | socat -t 15 stdio tcp-connect:127.0.0.1:4068`), true);
+
+	for($i = 0;$i < $instances; $i++) {
+		$customhash[$i] = $raw_trx_stats["gpus"][$i]["hashrate_minute"];
+        	if ($customhash[$i] > 1000*1000) {
+                	$customhash[$i] = $customhash[$i] / 1000 / 1000;
+        	}
+	}
+}
+
+if ($customminer == "nbminer") {
+	$raw_trx_stats = @json_decode(exec('curl -s http://127.0.0.1:9000/api/v1/status'), true);
+
+	for($i = 0;$i < $instances; $i++) {
+		$customhash[$i] = $raw_trx_stats['miner']['devices'][$i]['hashrate'];
+	}
+}
+
+if ($customminer == "cryptodredge") {
+	`echo "threads|" | socat stdio tcp-connect:127.0.0.1:4068 > /var/run/ethos/miner.dump`;
+	preg_match_all("/KHS=(\d+\.\d+)/", @file_get_contents("/var/run/ethos/miner.dump"), $cryptodredge_hashes);
+
+        for($i = 0;$i < $instances; $i++) {
+		$multiplier = 1;
+		if($cryptodredge_hashes[1][0] > 1000) {
+			$multiplier = 0.001;
+		}
+		if($cryptodredge_hashes[1][0] < 10 && $cryptodredge_hashes[1][0] > 0){
+			$multiplier = 1000;
+		}
+                $customhash[$i] = $cryptodredge_hashes[1][$i] * $multiplier;
+        }
+}
+
+
+if ($customminer == "gminer") {
+        $raw_trx_stats = @json_decode(exec('curl -s http://localhost:9000/stat'), true);
+        for($i = 0;$i < $instances; $i++) {
+                $customhash[$i] = $raw_trx_stats['devices'][$i]['speed'];
+        }
+}
+
+if ($customminer == "bminer") {
+        $raw_trx_stats = @json_decode(exec('curl -s http://127.0.0.1:1880/api/status'), true);
+
+        for($i = 0;$i < $instances; $i++) {
+                $customhash[$i] = $raw_trx_stats['miners'][$i]['solver']['solution_rate'];
+        }
+}
+
+if ($customminer == "phoenix") {
+        $socket = fsockopen('127.0.0.1', '3333', $err_code, $err_str);
+        $data = '{"id":1,"jsonrpc":"2.0","method":"miner_getstat1"' . $append . '} ' . "\r\n\r\n";
+        fputs($socket, $data);
+        $buffer = null;
+        while (!feof($socket)) {
+        $buffer .= fgets($socket, 3333);
+        }
+        if ($socket) {
+                fclose($socket);
+        }
+        $response = json_decode($buffer);
+        $result = $response->result;
+        $card_hashrate_stats = explode(';', $result[3]);
+
+        for($i = 0;$i < $instances; $i++) {
+                $customhash[$i] = round($card_hashrate_stats[$i] / 1000, 2);
+        }
+}
+
+if ($customminer == "noncerpro") {
+        $raw_trx_stats = @json_decode(exec('curl -s http://127.0.0.1:9000/api'), true);
+
+        for($i = 0;$i < $instances; $i++) {
+                $customhash[$i] = $raw_trx_stats['devices'][$i]['hashrate']/1000;
+        }
+}
+
+?>
