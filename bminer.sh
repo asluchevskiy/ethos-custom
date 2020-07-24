@@ -1,9 +1,9 @@
-VERSION='16.2.11-4ecd066'
+VERSION='v16.2.11-4ecd066'
 
 disallow
 minestop
-echo 'waiting for 15 seconds before continue'
-sleep 15
+echo 'waiting for 5 seconds before continue'
+sleep 5
 curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/opt/miners/custom/hash-monitor > /opt/miners/custom/hash-monitor
 cd /tmp
 wget https://www.bminercontent.com/releases/bminer-$VERSION\-amd64.tar.xz
