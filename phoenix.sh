@@ -1,17 +1,18 @@
-VERSION='5.0b'
+VERSION='5.0e'
 
 disallow
 minestop
 echo 'waiting for 5 seconds before continue'
 sleep 5
-curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/opt/miners/custom/hash-monitor > /opt/miners/custom/hash-monitor
+curl -s https://raw.githubusercontent.com/asluchevskiy/ethos-custom/master/opt/miners/custom/hash-monitor > /opt/miners/custom/hash-monitor
 cd /tmp
 rm -rf PhoenixMiner*
-wget -q https://github.com/Phoenix-Miner/PhoenixMiner/releases/download/$VERSION/PhoenixMiner_$VERSION\_Linux.zip
+PHOENIX_TAR=PhoenixMiner_$VERSION\_Linux.tar.gz
+wget -q https://github.com/asluchevskiy/ethos-custom/raw/master/src/$PHOENIX_TAR
 rm /opt/miners/custom/custom
 rm -rf /opt/miners/custom/phoenix
 mkdir /opt/miners/custom/phoenix
-unzip PhoenixMiner*
+tar xvf $PHOENIX_TAR
 mv ./PhoenixMiner_$VERSION\_Linux/* /opt/miners/custom/phoenix
 rm -rf PhoenixMiner*
 ln -s /opt/miners/custom/phoenix/PhoenixMiner /opt/miners/custom/custom
