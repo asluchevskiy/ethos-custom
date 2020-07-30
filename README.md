@@ -7,29 +7,29 @@ Works with ethos 1.3.3
 
 Run this command to install or full update:
 ```
-source <(curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/install.sh)
+source <(curl -s https://raw.githubusercontent.com/asluchevskiy/ethos-custom/master/install.sh)
 ```
 ### install miners
 ```
-source <(curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/t-rex.sh)
+source <(curl -s https://raw.githubusercontent.com/asluchevskiy/ethos-custom/master/t-rex.sh)
 ```
 ```
-source <(curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/nbminer.sh)
+source <(curl -s https://raw.githubusercontent.com/asluchevskiy/ethos-custom/master/nbminer.sh)
 ```
 ```
-source <(curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/bminer.sh)
+source <(curl -s https://raw.githubusercontent.com/asluchevskiy/ethos-custom/master/bminer.sh)
 ```
 ```
-source <(curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/cryptodredge.sh)
+source <(curl -s https://raw.githubusercontent.com/asluchevskiy/ethos-custom/master/cryptodredge.sh)
 ```
 ```
-source <(curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/gminer.sh)
+source <(curl -s https://raw.githubusercontent.com/asluchevskiy/ethos-custom/master/gminer.sh)
 ```
 ```
-source <(curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/phoenix.sh)
+source <(curl -s https://raw.githubusercontent.com/asluchevskiy/ethos-custom/master/phoenix.sh)
 ```
 ```
-source <(curl -s https://raw.githubusercontent.com/unrealjke/ethos-custom/master/noncerpro-nimiq-cuda.sh)
+source <(curl -s https://raw.githubusercontent.com/asluchevskiy/ethos-custom/master/noncerpro-nimiq-cuda.sh)
 ```
 ## flags for hashing
 t-rex
