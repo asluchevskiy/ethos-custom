@@ -80,10 +80,12 @@ if ($customminer == "noncerpro") {
         }
 }
 
-if ($customminer == "lolMiner") {
-        $json = file_get_contents('http://127.0.0.1:9000/summary');
+
+if ($customminer == "lolminer") {
+        $json = file_get_contents('http://127.0.0.1:9000');
         $raw_trx_stats = json_decode($json, true);
-        for($i = 0;$i < $instances; $i++) {
+        $count = count($raw_trx_stats['GPUs']);
+        for($i = 0;$i < $count; $i++) {
                 $customhash[$i] = $raw_trx_stats['GPUs'][$i]['Performance'];
         }
 }
