@@ -90,4 +90,13 @@ if ($customminer == "lolminer") {
         }
 }
 
+if ($customminer == "danila") {
+        $json_data = file_get_contents('/opt/miners/custom/stats.json');
+        $json_data=@json_decode($json_data, true);
+        $count = count($json_data['cards']);
+        for($i = 0;$i < $count; $i++) {
+                $customhash[$i] = round($json_data['rates'][$i]);
+        }
+}
+
 ?>
